@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f5f5f5;
+  --color-text: #2d2d2d;
+  --color-text-muted: #555555;
+  --color-accent: #fe7000;
+}
+
+.dark {
+  --color-bg: #1c1c1c;
+  --color-surface: #242424;
+  --color-surface-alt: #2d2d2d;
+  --color-text: #f3f3f3;
+  --color-text-muted: #b5b5b5;
+  --color-accent: #fe7000;
+}
+
+html, body {
+  font-family: theme('fontFamily.sans');
+  background: var(--color-bg);
+  color: var(--color-text);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-md bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-white shadow hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-accent)] transition dark:shadow-subtle dark:ring-offset-[var(--color-bg)];
+}
+
+.section-title {
+  @apply text-2xl md:text-3xl font-bold tracking-tight mb-4 text-neutral-900 dark:text-white;
+}
+
+.container-responsive {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.sticky-cta-mobile {
+  @apply fixed bottom-0 left-0 right-0 z-50 flex md:hidden bg-white/95 dark:bg-[#242424]/90 backdrop-blur border-t border-neutral-200 dark:border-neutral-700 p-3;
+}
+
+/* Accent & Card Utilities */
+.card {
+  @apply rounded-lg border border-neutral-200 bg-white shadow-sm dark:bg-[color:var(--color-surface)] dark:border-neutral-700 transition-colors;
+}
+.card-accent {
+  @apply card relative before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-[var(--color-accent)] before:rounded-l-lg before:content-[''];
+}
+.accent-divider {
+  @apply h-1 w-20 bg-[var(--color-accent)] rounded-full;
+}
+.accent-ring {
+  /* Using standard ring + custom color via shadow fallback since Tailwind can't parse ring-[var(--color-accent)]/opacity in @apply */
+  @apply ring-1 ring-brand-accent/30;
+}
+.hero-accent-title span.accent {
+  background: linear-gradient(90deg, var(--color-accent) 0%, rgba(254,112,0,0.75) 60%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Animation Utilities */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up { opacity: 0; }
+.fade-in-up.show { animation: fade-in-up 0.6s ease-out forwards; }
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Hover enhancements */
+.btn-primary { transition: transform .25s var(--ease, cubic-bezier(.4,0,.2,1)), box-shadow .25s; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 16px -4px rgba(0,0,0,.25); }
+.btn-primary:active { transform: translateY(0); }
+
+.card, .card-accent { transition: background-color .3s, border-color .3s, transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .3s; }
+.card:hover, .card-accent:hover { transform: translateY(-4px); box-shadow: 0 8px 24px -8px rgba(0,0,0,.35); }
