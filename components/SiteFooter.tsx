@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { phoneNumberDisplay, phoneNumberRaw } from '../lib/seo';
 
 export function SiteFooter() {
   return (
@@ -25,13 +26,14 @@ export function SiteFooter() {
         <div>
           <h4 className="font-semibold mb-2 text-neutral-900 dark:text-white">Quick Links</h4>
           <ul className="space-y-1">
+            <li><Link href="/our-work" className="hover:text-brand-accent transition">Our Work</Link></li>
             <li><Link href="/about" className="hover:text-brand-accent transition">About</Link></li>
             <li><Link href="/contact" className="hover:text-brand-accent transition">Contact</Link></li>
           </ul>
         </div>
         <div>
           <h4 className="font-semibold mb-2 text-neutral-900 dark:text-white">Get in Touch</h4>
-          <p className="text-neutral-600 dark:text-neutral-400"><a href="tel:7195551234" className="text-brand-accent font-semibold">Call or Text: (719) 555-1234</a></p>
+          <p className="text-neutral-600 dark:text-neutral-400"><a href={`tel:${phoneNumberRaw}`} className="text-brand-accent font-semibold">Call or Text: {phoneNumberDisplay}</a></p>
           <p className="text-neutral-600 dark:text-neutral-400">Environmentally responsible disposal & recycling.</p>
         </div>
       </div>

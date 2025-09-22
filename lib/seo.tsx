@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 
 export const siteName = 'Stark Strong LLC';
 export const siteUrl = 'https://www.example.com'; // TODO replace with real domain
-export const phoneNumberDisplay = '(719) 000-0000'; // TODO replace
-export const phoneNumberRaw = '+17190000000'; // TODO replace
+export const phoneNumberDisplay = '(719) 800-7320';
+export const phoneNumberRaw = '7198007320';
 export const primaryLocation = 'Colorado Springs, CO';
 export const emailAddress = 'info@example.com'; // TODO replace
 

@@ -1,5 +1,6 @@
 import { CTAButton } from './CTAButton';
 import { LeadForm } from './LeadForm';
+import { phoneNumberDisplay, phoneNumberRaw } from '../lib/seo';
 
 export function ContactPage() {
   return (
@@ -12,7 +13,7 @@ export function ContactPage() {
         <div className="space-y-6">
           <div className="rounded-lg border border-neutral-200 bg-white p-6 shadow-sm space-y-2 dark:bg-[color:var(--color-surface)] dark:border-neutral-700">
             <h2 className="font-semibold text-neutral-900 dark:text-white">Call or Text</h2>
-            <p className="text-neutral-700 dark:text-neutral-300 text-sm">Phone: <a href="tel:7195551234" className="text-brand-accent font-semibold">(719) 555-1234</a></p>
+            <p className="text-neutral-700 dark:text-neutral-300 text-sm">Phone: <a href={`tel:${phoneNumberRaw}`} className="text-brand-accent font-semibold">{phoneNumberDisplay}</a></p>
             <p className="text-neutral-600 dark:text-neutral-400 text-sm">Licensed & Insured • Eco-Friendly Disposal • Locally Owned</p>
           </div>
           <CTAButton />

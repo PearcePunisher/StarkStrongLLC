@@ -17,6 +17,7 @@ export function SiteHeader() {
     { href: '/services', label: 'Services' },
     { href: '/what-we-take', label: 'What We Take' },
     { href: '/service-areas', label: 'Service Areas' },
+    { href: '/our-work', label: 'Our Work' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ];
