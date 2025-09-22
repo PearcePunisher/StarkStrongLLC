@@ -27,6 +27,7 @@ export function SiteFooter() {
           <h4 className="font-semibold mb-2 text-neutral-900 dark:text-white">Quick Links</h4>
           <ul className="space-y-1">
             <li><Link href="/our-work" className="hover:text-brand-accent transition">Our Work</Link></li>
+            <li><Link href="/pricing" className="hover:text-brand-accent transition">Pricing</Link></li>
             <li><Link href="/about" className="hover:text-brand-accent transition">About</Link></li>
             <li><Link href="/contact" className="hover:text-brand-accent transition">Contact</Link></li>
           </ul>

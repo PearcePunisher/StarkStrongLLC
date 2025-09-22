@@ -15,9 +15,11 @@ export function SiteHeader() {
 
   const links = [
     { href: '/services', label: 'Services' },
+    { href: '/house-cleaning', label: 'House Cleaning' },
     { href: '/what-we-take', label: 'What We Take' },
     { href: '/service-areas', label: 'Service Areas' },
     { href: '/our-work', label: 'Our Work' },
+    { href: '/pricing', label: 'Pricing' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ];
